@@ -13,7 +13,35 @@
  *
  */
 
+//How to define a Class
+class Student {
 
- 
+
+
+}
+
+// The below code assigns all the declared classes in the array to the variable $classes
+$classes = get_declared_classes();
+//The below code takes the array and turns it into a string where each class is separated by a comma & a space
+echo 'Classes: ' . implode(', ',$classes) . '<br /><br />';
+
+//Create a new array of 3 classes
+$class_names = ['Product','Student','student'];
+//Loop through the array
+foreach($class_names as $class_name){
+    //Test each array item to see if it has been declared
+    if(class_exists($class_name)){
+        //If delared print that out
+        echo "<span style='text-decoration: underline;'>{$class_name}</span> <strong>IS</strong> a declared class!<br /><br />";
+    } else {
+        //If not delared print that out
+        echo "<span style='text-decoration: underline;'>{$class_name}</span> <strong>IS NOT</strong> a declared class!<br /><br />";
+    }
+}
+
+// *** RESULT: ***
+// Student & student should return true - class_exists() is case insensitive
+// Product should return false
+
 
 ?>

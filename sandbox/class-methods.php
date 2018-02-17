@@ -16,6 +16,17 @@
  *
  */
 
+/**
+ * REFERRING TO INSTANCES OF OBJECTS FROM WITHIN METHODS:
+ * $this->
+ *
+ *
+ *
+ *
+ *
+ */
+
+
 //Defining a class
  class Student {
 
@@ -26,6 +37,10 @@
 
     function say_hello(){
         return 'Hello World!';
+    }
+
+    function full_name(){
+        return $this->first_name . ' ' . $this->last_name . '.<br />';
     }
 
  }
@@ -44,6 +59,10 @@ $student2 = new Student;
 $student2->first_name = 'Ethel';
 $student2->last_name = 'Mertz';
 $student2->country = 'England';
+
+echo $student1->full_name() . '<br /><br />';
+echo $student2->full_name() . '<br /><br />';
+
 
 //Retrieve & Display Properties:
 echo '<strong>Full Name: </strong>' . $student1->first_name . ' ' . $student1->last_name . '.<br />';

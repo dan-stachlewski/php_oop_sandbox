@@ -30,6 +30,22 @@
  *
  */
 
+/**
+ * CLASS METHODS:
+ * Are functions that perform the Objects Actions
+ * In procedureal PHP = functions
+ * In PHP OOP = methods when referencing classes
+ * Defined in Class like a regular function
+ * How we refer to functions/methods from classes:
+ *
+ * echo $customer->say_hello(); - the () = method (without () they would be properties)
+ *
+ * get_class_methods($mixed) - pass in either class name as a string or instance of an object - returning the methods available
+ * method_exists($mixed,$string) - pass in either class name as a string or instance of an object - the second arg would be the method that you want to know if it exists or not
+ *
+ *
+ */
+
 //Defining a class
  class Student {
 

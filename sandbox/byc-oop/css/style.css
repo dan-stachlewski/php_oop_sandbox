@@ -1,0 +1,28 @@
+.img-desc{
+    float: left;
+    margin:15px;
+}
+.byc-desc{
+    width: 550px;
+    border: 1px solid #efefef;
+}
+p{
+    text-align: justify;
+    padding: 0 15px 15px 0;
+}
+h2{
+    text-align: center;
+    border-bottom: 1px solid #000;
+}
+.desc-lbs{
+    float:left;
+    padding-left: 25px;
+}
+.desc-kgs{
+    float: right;
+    padding-right: 25px;
+}
+.weight-conversion{
+    border: 1px solid blue;
+    overflow: auto;
+}

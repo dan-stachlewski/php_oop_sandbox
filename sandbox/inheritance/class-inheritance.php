@@ -19,9 +19,18 @@
  *
  * ALways declare Parent Class first.
  *
+ * get_parent_class($mixed) - can take name of class or object instance of class as args advising which class is the parent class of the sub-class
+ * is_sublcass_of($mixed,$string) - can also take the name of the class or object instance as 1st arg & then parent class name as string
+ * class_parents($mixed)  - can also take the name of the class or object instance as arg and it will tell us ALL of the parent classes
+ *
  */
 
-class Parent{
+class User{
+
+    //Add the User Class PROPERTIES
+
+    //Add the User Class Methods
+    
 
 }
 

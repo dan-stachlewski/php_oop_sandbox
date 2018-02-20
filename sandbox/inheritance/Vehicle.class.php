@@ -15,6 +15,12 @@ class Vehicle{
     var $wheels;
     var $doors;
 
+    /*
+    var $engine_size;
+    var $weight;
+    var $last_service;
+    */
+
     //Define Class Methods
     function upload_img($file){
 

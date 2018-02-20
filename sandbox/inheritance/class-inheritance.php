@@ -28,12 +28,69 @@
 class User{
 
     //Add the User Class PROPERTIES
+    var $first_name;
+    var $last_name;
+    var $username;
 
-    //Add the User Class Methods
-    
+    /*Additional Suggestions for later on:
+    var $id;
+    var $profile_img;
+    var $password;
+    var $password_confirmed;
+    var $email;
+    var $contact_number;
+    */
+
+    //Add the User Class Methods - this method constructs & returns the users Full Name.
+    function full_name(){
+        return $this->first_name . ' ' . $this->last_name . '.';
+    }
 
 }
 
-class SubClass extends Parent{
+class Customer extends User{
 
+    //Add the (new) Customers Properties
+
+    //Add the (new) Customers Methods
 }
+
+//Create a new Object Instance of the User Class - Instatiate new Object
+$u = new User;
+
+//Provide the Properties of this User Class Instance
+$u->first_name = 'Jerry';
+$u->last_name = 'Seinfeld';
+$u->username = 'jseinfeld';
+
+//Call Method that prints out the Full Name for this User Class Instance
+$name = $u->full_name();
+echo '<strong>Full Name:</strong> ' . $name . '<br />';
+
+//Create a new Object Instance of the Customer Sub-Class - Instatiate new Object
+$c = new Customer;
+
+//Provide the Properties of this Customer Sub-Class Instance proving we are inheriting the properties $first_name, $last_name, $username
+$c->first_name = 'George';
+$c->last_name = 'Costanza';
+$c->username = 'gcostanza';
+
+//Call Method that prints out the Full Name for this Customer Sub-Class Instance
+$name = $c->full_name();
+echo '<strong>Full Name:</strong> ' . $name . '<br />';
+
+//Use the get_parent_class() Method to confirm which is the 'Parent Class of the User $u & Customer $c Instances':
+echo 'The Parent Class of ' . 'User is: ' . get_parent_class($u) . '<br />';
+echo 'The Parent Class of ' . 'Customer is: ' . get_parent_class($c) . '<br />';
+
+//Use the is_subclass_of() Method to display which Classes are Sub-Clases of Clases or Sub-Classes - returns true/false therefore need to use a loop to display results:
+if(is_subclass_of($c, 'User')){
+    echo 'Customer is a Sub-Class of User. <br /><br />';
+} else {
+    echo 'Customer is not a Sub-Class of User. <br /><br />';
+}
+
+//Use the class_parents() Method to see what Parents a particlar Sub-Class has - even though we wrote the Class Files. This returns an array which we need to deconstruct to echo out...
+//This is useful if we don't know how many Classes there are in a project and we want to target the Parent Class rather than the Sub-Classes so we can use the functionality api wide.
+$parents = class_parents($c);
+echo implode(', ',$parents) . '<br />';
